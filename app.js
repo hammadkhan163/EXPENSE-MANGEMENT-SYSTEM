@@ -2,11 +2,11 @@
 let expenses = [];
 
 function addExpense() {
-    const name = document.getElementById('expense-name').value;
-    const amount = parseFloat(document.getElementById('expense-amount').value);
+    let name = document.getElementById('expense-name').value;
+    let amount = parseFloat(document.getElementById('expense-amount').value);
 
-    if (name && !isNaN(amount) && amount > 0) {
-        const expense = { name, amount };
+    if (name && (amount) && amount > 0) {
+        let expense = { name, amount };
         expenses.push(expense);
         updateExpenseList();
         calculateTotal();
@@ -25,11 +25,11 @@ function removeExpense(index) {
 }
 
 function updateExpenseList() {
-    const expenseList = document.getElementById('expense-list').getElementsByTagName('tbody')[0];
+    let expenseList = document.getElementById('expense-list').getElementsByTagName('tbody')[0];
     expenseList.innerHTML = ''; 
 
     expenses.forEach((expense, index) => {
-        const row = expenseList.insertRow();
+        let row = expenseList.insertRow();
         row.innerHTML = `
             <td>${expense.name}</td>
             <td>${expense.amount.toFixed(2)}</td>
