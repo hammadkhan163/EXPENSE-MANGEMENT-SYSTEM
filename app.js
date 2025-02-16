@@ -39,7 +39,7 @@ function updateExpenseList() {
 }
 
 function calculateTotal() {
-    const total = expenses.reduce((sum, expense) => sum + expense.amount, 0);
+    let total = expenses.reduce((sum, expense) => sum + expense.amount, 0);
     document.getElementById('total-amount').textContent = `Total: ${total.toFixed(2)}`;
 }
 
